@@ -23,6 +23,11 @@ class Takeloom < Formula
     # wheels (numpy, opencv, ...) rather than building each from source.
     system Formula["python@3.14"].opt_bin/"python3.14", "-m", "venv", libexec
     system libexec/"bin/pip", "install", "--no-cache-dir", buildpath
+    # static-ffmpeg wrongly lists twine (a PyPI upload tool) as a runtime
+    # dependency. Nothing imports it, and its nh3 extension module makes
+    # Homebrew's ad-hoc re-signing fail ("Insertion at offset ... is not
+    # valid"), so drop the chain.
+    system libexec/"bin/pip", "uninstall", "--yes", "twine", "readme-renderer", "nh3"
     bin.install_symlink libexec/"bin/takeloom"
   end
 
