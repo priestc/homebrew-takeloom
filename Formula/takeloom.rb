@@ -4,8 +4,8 @@
 class Takeloom < Formula
   desc "Music recording session manager"
   homepage "https://github.com/priestc/takeloom"
-  url "https://files.pythonhosted.org/packages/source/t/takeloom/takeloom-0.5.0.tar.gz"
-  sha256 "3c53f6b6f404f415ef6f14a929137a1a9b820c2093b1104434871812cbfccfbe"
+  url "https://files.pythonhosted.org/packages/59/7f/d60b3e5c774bfe718c948599d9cd824e9065d65e850b0b331dda02690b07/takeloom-0.5.1.tar.gz"
+  sha256 "ab155975d942141d0801a4546e50dea1fe8f1f0a4ab1a2236f9e0d4c8cc89cbe"
   license "MIT"
   head "https://github.com/priestc/takeloom.git", branch: "main"
 
