@@ -28,6 +28,9 @@ class Takeloom < Formula
     # Homebrew's ad-hoc re-signing fail ("Insertion at offset ... is not
     # valid"), so drop the chain.
     system libexec/"bin/pip", "uninstall", "--yes", "twine", "readme-renderer", "nh3"
+    # Fetch takeloom's static ffmpeg now, while the keg is still writable,
+    # instead of on first launch (see takeloom/ffmpeg_bin.py).
+    system libexec/"bin/python", "-c", "import takeloom.ffmpeg_bin"
     bin.install_symlink libexec/"bin/takeloom"
   end
 
